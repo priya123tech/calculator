@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+    </head>
+  <body>
+  
+    <div class="container" >
+        <div class="col-lg-8 m-auto d-block ">
+            <br>
+            <h3 class="text-primary text-uppercase text-center"> Calculate simple Interest </h3>
+</br>
+        <form action="#" onsubmit="return calcy()">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Principal Amount</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="Prinamt" id="Prinamt" placeholder="Principal Amout">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Interest Rate</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="itrate" id="itrate" placeholder="Interest Rate">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Time Period</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="term" id="term" placeholder="Time Period">
+                </div>
+            </div>
+            <div>
+                <button type="submit" name="submit" class="btn btn-primary" > Submit</button>
+            </div>
+            
+            <div>
+                <p id= "showdata"></p>
+                </div>
+            </form>
+            <h3 class="text-primary text-uppercase text-center"> Calculate Compound Interest </h3> 
+          </br>
+          <form action="#" onsubmit="return calcy1()">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Principal Amount</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="Prinamtc" id="Prinamtc" placeholder="Principal Amout">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Rate of Interest</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="iteratec" id="iteratec" placeholder="Principal Amout">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">No of time Interest is Compounded</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="termc" id="termc" placeholder="Principal Amout">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">No. of Years</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="timec" id="timec" placeholder="Principal Amout">
+              </div>
+            </div>
+            <div>
+              <button type="submit" name="submit1" class="btn btn-primary" > Submit</button>
+          </div>
+          
+          <div>
+              <p id= "showdata1"></p>
+              </div>          
+          </form>
+        </div>
+        </div>
+
+        <script type="text/JavaScript">
+            function calcy(){
+            var Prinamt = document.getElementById('Prinamt').value
+            var itrate = document.getElementById('itrate').value
+            var term = document.getElementById('term').value
+            
+            let result=""
+            let cresult=""
+            result=Prinamt*itrate*term
+            cresult=result/100
+            res= cresult+Prinamt
+            
+            document.getElementById('showdata').innerHTML=`The Simple Interest is ${cresult} and total amount is ${res}`
+            return false;
+            }
+            function calcy1(){
+            var q = document.getElementById('Prinamtc').value
+            var s = document.getElementById('iteratec').value
+            var t = document.getElementById('termc').value  
+            var m = document.getElementById('timec').value
+            
+            A=(q*Math.pow((1+(s/(m*100))),(m*t)))
+            var n=A.toFixed(2)
+            document.getElementById('showdata1').innerHTML=`The Compound Interest is ${n}`
+            return false;
+
+            }
+
+            </script>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+         
+
+
+  </body>
+</html>
